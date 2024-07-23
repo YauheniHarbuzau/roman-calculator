@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0'
+
+java {
+    sourceCompatibility = JavaLanguageVersion.of(22)
+    targetCompatibility = JavaLanguageVersion.of(22)
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jUnitJupiterVersion = '5.7.0'
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jUnitJupiterVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jUnitJupiterVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
